@@ -25,11 +25,28 @@ router.get('/md4', function(req, res, next){
 });
 
 router.get('/register', function(req, res, next){
-  res.send('PAGINA DE REGISTRO DE USUARIOS, SE ENCUENTRA EN PRODUCCION');
+  res.render('registro', {title: 'Registro Nutricionista'});
 });
 
 router.get('/login', function(req, res, next){
-  res.send('PAGINA DE INICIO DE SESION, SE ENCUENTRA EN PRODUCCION');
+  res.render('login', {title: 'Inicio de Sesión'});
 });
+
+router.post('/register', function(req, res, next){
+  const {nombre, apellido, email, password, password2} = req.body;
+  console.log(req.body);
+  res.send('Registro')
+});
+
+router.post('/login', function(req, res, next){
+  const {email, password} = req.body;
+  console.log(req.body);
+  if (email == 'admin' && password == 'admin') {
+    res.redirect('/users');
+  } else {
+    res.send('Credenciales incorrectas');
+  }
+});
+
 
 module.exports = router;
