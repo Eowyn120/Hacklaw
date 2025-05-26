@@ -29,7 +29,11 @@ router.get('/register', function(req, res, next){
 });
 
 router.get('/login', function(req, res, next){
-  res.render('login', {title: 'Inicio de Sesión'});
+  if (!req.session.auth){
+    res.render('login', {title: 'Inicio de Sesión'});
+  }else{
+    res.redirect('/users');
+  }
 });
 
 router.post('/register', function(req, res, next){
@@ -42,6 +46,7 @@ router.post('/login', function(req, res, next){
   const {email, password} = req.body;
   console.log(req.body);
   if (email == 'admin' && password == 'admin') {
+    req.session.auth = true;
     res.redirect('/users');
   } else {
     res.send('Credenciales incorrectas');

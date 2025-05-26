@@ -1,0 +1,470 @@
+/* Variables CSS para colores y tipografía */
+:root {
+    --primary-color: #0056b3; /* Azul para elementos principales como botones, enlaces activos */
+    --secondary-color: #f8f9fa; /* Gris claro para fondos secundarios */
+    --text-color: #333;
+    --heading-color: #222;
+    --border-color: #ddd;
+    --sidebar-width: 250px;
+    --font-family: 'Roboto', sans-serif; /* Si usas Google Fonts */
+}
+
+/* Estilos Generales */
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    background-color: #f4f7f6; /* Fondo general más suave */
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Barra de Navegación Superior */
+.navbar {
+    background-color: #ffffff;
+    color: var(--text-color);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.navbar .top-nav span {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Contenedor Principal (sidebar + content) */
+.leccion {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se apilen en pantallas pequeñas */
+    min-height: calc(100vh - 100px); /* Altura mínima para el footer */
+}
+
+/* Barra Lateral (Sidebar) */
+.sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--secondary-color);
+    padding: 20px;
+    border-right: 1px solid var(--border-color);
+    box-shadow: 2px 0 5px rgba(0,0,0,0.02);
+    flex-shrink: 0; /* No permite que la sidebar se encoja */
+}
+
+.sidebar h2 {
+    color: var(--heading-color);
+    font-size: 1.2em;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    display: block;
+    padding: 8px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #e2e6ea;
+}
+
+.sidebar ul li.active a {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+}
+
+/* Contenido Principal */
+.leccion {
+    flex-grow: 1; /* El contenido toma el espacio restante */
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin: 20px; /* Margen alrededor del contenido */
+    box-shadow: 0 0 15px rgba(0,0,0,0.05);
+}
+
+.leccion h1 {
+    color: var(--primary-color);
+    font-size: 2em;
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+.lesson-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.lesson-section:last-child {
+    border-bottom: none; /* No hay línea en la última sección */
+}
+
+.lesson-section h2 {
+    color: var(--heading-color);
+    font-size: 1.6em;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.lesson-section p {
+    margin-bottom: 1em;
+}
+
+/* Regla para ocultar lecciones */
+.lesson-content.hidden {
+    display: none; /* Oculta los divs de lección */
+}
+
+.lesson-section ul {
+    margin-left: 20px;
+    margin-bottom: 1em;
+}
+
+/* Estilo para bloques de código */
+.code-example {
+    background-color: #272c34;
+    color: #e0e0e0;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto; /* Permite scroll horizontal si el código es largo */
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.9em;
+}
+
+.code-example h3 {
+    color: #8cceff; /* Un color diferente para el título del código */
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.code-example pre {
+    margin: 0;
+}
+
+/* Estilo para imágenes con caption */
+.image-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.image-container .caption {
+    font-size: 0.85em;
+    color: #666;
+    margin-top: 10px;
+}
+
+
+/* Botones de Navegación */
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover:not(:disabled) {
+    background-color: #004085;
+}
+
+.btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Pie de Página */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.8em;
+    width: 100%;
+}
+
+
+.accordion-container {
+    border: 1px solid var(--accordion-border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 20px; /* Separación del contenido de la lección */
+    margin-bottom: 20px;
+}
+
+.accordion-item {
+    border-bottom: 1px solid var(--accordion-border-color);
+}
+
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+.accordion-header {
+    background-color: var(--accordion-header-bg);
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 15px 20px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.accordion-header:hover {
+    background-color: #e9e9e9;
+}
+
+.accordion-header.active {
+    background-color: var(--accordion-header-active-bg);
+}
+
+.icon-toggle {
+    font-size: 1.1em; /* Ajuste para Font Awesome */
+    width: 20px; /* Ancho fijo para el icono */
+    text-align: center;
+    margin-right: 15px;
+    color: #888;
+}
+
+/* Si no usas Font Awesome y usas texto '+' y '-' */
+.icon-toggle i {
+    pointer-events: none; /* Asegura que el clic siempre vaya al botón */
+}
+
+
+.accordion-content {
+    padding: 0 20px;
+    background-color: #ffffff;
+    overflow: hidden;
+    max-height: 0; /* Oculto por defecto */
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+}
+
+.accordion-content.show {
+    max-height: 500px; /* Asegúrate de que sea lo suficientemente grande para tu contenido */
+    padding: 15px 20px;
+}
+
+.accordion-content ul {
+    list-style: disc;
+    margin: 0;
+    padding-left: 25px;
+}
+
+.accordion-content li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+/* --- Estilos para la Sección de Ventajas/Desventajas --- */
+.pros-cons-grid {
+    display: flex; /* Habilita Flexbox para colocar los recuadros en fila */
+    flex-wrap: wrap; /* Permite que los recuadros se apilen en pantallas pequeñas */
+    gap: 20px; /* Espacio entre los recuadros */
+    margin-top: 25px;
+    justify-content: center; /* Centra los recuadros si no llenan todo el ancho */
+}
+
+.pros-cons-box {
+    flex: 1; /* Permite que los recuadros crezcan y se encojan */
+    min-width: 280px; /* Ancho mínimo antes de que se apilen */
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+}
+
+.pros-cons-box h3 {
+    font-size: 1.4em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid; /* El borde inferior será el color específico */
+}
+
+.pros-cons-box ul {
+    list-style: none; /* Quita los puntos de lista por defecto */
+    padding: 0;
+    margin: 0;
+}
+
+.pros-cons-box ul li {
+    display: flex; /* Habilita Flexbox para alinear el icono y el texto */
+    align-items: flex-start; /* Alinea el icono y el texto arriba */
+    margin-bottom: 10px;
+    font-size: 0.95em;
+    line-height: 1.4;
+}
+
+.pros-cons-box ul li i {
+    margin-right: 10px; /* Espacio entre el icono y el texto */
+    font-size: 1.1em; /* Tamaño del icono */
+    flex-shrink: 0; /* Evita que el icono se encoja */
+}
+
+/* Colores específicos para Ventajas */
+.pros.pros-cons-box {
+    border-color: #28a745; /* Verde para el borde */
+}
+
+.pros.pros-cons-box h3 {
+    color: #28a745; /* Verde para el título */
+    border-color: #28a745;
+}
+
+.pros.pros-cons-box ul li i {
+    color: #28a745; /* Verde para los iconos de bien */
+}
+
+/* Colores específicos para Desventajas */
+.cons.pros-cons-box {
+    border-color: #dc3545; /* Rojo para el borde */
+}
+
+.cons.pros-cons-box h3 {
+    color: #dc3545; /* Rojo para el título */
+    border-color: #dc3545;
+}
+
+.cons.pros-cons-box ul li i {
+    color: #dc3545; /* Rojo para los iconos de mal */
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .navbar .logo {
+        margin-bottom: 10px;
+    }
+
+    .leccion {
+        flex-direction: column; /* Apila la barra lateral y el contenido */
+    }
+
+    .sidebar {
+        width: 100%; /* La barra lateral ocupa todo el ancho */
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        box-shadow: none;
+        padding: 15px;
+    }
+
+    .sidebar h2 {
+        text-align: center;
+    }
+
+    .sidebar nav ul {
+        display: flex; /* Para una navegación horizontal en móviles */
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .sidebar nav ul li {
+        margin-bottom: 5px;
+    }
+
+    .sidebar nav ul li a {
+        padding: 6px 12px;
+        font-size: 0.9em;
+    }
+
+    .content {
+        margin: 15px; /* Ajusta el margen en pantallas pequeñas */
+        padding: 20px;
+    }
+
+    .content h1 {
+        font-size: 1.8em;
+    }
+
+    .lesson-section h2 {
+        font-size: 1.4em;
+    }
+
+    .navigation-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn {
+        width: 100%; /* Botones de navegación de ancho completo */
+    }
+
+        .pros-cons-grid {
+        flex-direction: column; /* Apila los recuadros en pantallas más pequeñas */
+        align-items: center; /* Centra los recuadros apilados */
+    }
+
+    .pros-cons-box {
+        width: 100%; /* Ocupa todo el ancho disponible */
+        max-width: 400px; /* Limita el ancho máximo para evitar que se vea muy ancho en móviles */
+    }
+    
+}
+
+@media (max-width: 480px) {
+    .content h1 {
+        font-size: 1.5em;
+    }
+
+    .lesson-section h2 {
+        font-size: 1.2em;
+    }
+}
