@@ -381,6 +381,156 @@ body {
     color: #dc3545; /* Rojo para los iconos de mal */
 }
 
+.icon-list {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.icon-list li {
+    display: flex; /* Habilita Flexbox para alinear el icono y el texto */
+    align-items: flex-start; /* Alinea los ítems al inicio (arriba) si el texto es multilinea */
+    text-align: justify; /* ¡Esto justifica el texto! */
+    margin-bottom: 10px; /* Espacio entre cada elemento de la lista */
+    line-height: 1.6; /* Mejora la legibilidad con más espacio entre líneas */
+    /* Ya no necesitamos padding-left ni text-indent aquí gracias a Flexbox */
+}
+
+.icon-list li .fas.fa-caret-right { /* Estilos específicos para el ícono de Font Awesome */
+    margin-right: 8px; /* Espacio entre el icono y el texto */
+    color: #004085; /* El color azul que quieres para el icono */
+    font-size: 1.2em; /* Tamaño del icono */
+    flex-shrink: 0; /* Evita que el icono se encoja si el texto es muy largo */
+    /* Asegura que la altura de línea del icono coincida con la del texto si es necesario */
+    line-height: inherit; 
+}
+
+.icon-list li .fas.fa-thumbtack { 
+    margin-right: 10px; /* Espacio entre el ícono y el texto */
+    color: #004085; /* Un color anaranjado/marrón como el de tu imagen (puedes ajustar el código hex) */
+    font-size: 1.1em; /* Tamaño del ícono, puedes ajustar */
+    flex-shrink: 0; /* Evita que el ícono se encoja */
+    padding-top: 2px; /* Ajuste fino para alinear verticalmente el ícono con la primera línea de texto */
+}
+
+.icon-list li b,
+.icon-list li strong {
+    /* Añade un margen a la derecha para separar el texto en negrita del resto del texto */
+    margin-right: 5px; /* Puedes ajustar este valor según la separación deseada */
+}
+
+/* --- Estilos para el Cuadro Comparativo --- */
+.comparison-table-container {
+    overflow-x: auto; /* Permite scroll horizontal en pantallas pequeñas */
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border: 1px solid var(--border-color); /* Borde alrededor de toda la tabla */
+    border-radius: 8px; /* Bordes redondeados para el contenedor */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+    background-color: #ffffff;
+}
+
+.comparison-table {
+    width: 100%; /* La tabla ocupa todo el ancho de su contenedor */
+    border-collapse: collapse; /* Elimina el espacio entre los bordes de las celdas */
+    min-width: 600px; /* Ancho mínimo para la tabla, para asegurar legibilidad en muchas columnas */
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 12px 15px; /* Espacio interno de las celdas */
+    text-align: left; /* Alineación del texto a la izquierda */
+    border: 1px solid #e0e0e0; /* Borde para cada celda */
+}
+
+/* Estilos para la fila del encabezado (la primera fila) */
+.comparison-table thead tr {
+    background-color: var(--primary-color); /* Fondo del encabezado (azul principal) */
+    color: white; /* Texto blanco para el encabezado */
+    font-weight: bold; /* Ya es negrita por <th>, pero lo reforzamos */
+    border-bottom: 2px solid #004085; /* Borde inferior más oscuro para el encabezado */
+}
+
+/* Estilos para las celdas del encabezado */
+.comparison-table th {
+    font-size: 1.05em;
+    text-transform: uppercase; /* Opcional: texto del encabezado en mayúsculas */
+    letter-spacing: 0.5px; /* Espaciado entre letras */
+}
+
+/* Estilos para las filas del cuerpo de la tabla */
+.comparison-table tbody tr:nth-child(odd) { /* Filas impares con un fondo ligero */
+    background-color: #f9f9f9;
+}
+
+.comparison-table tbody tr:hover { /* Efecto hover para las filas */
+    background-color: #f0f0f0;
+    cursor: default;
+}
+
+/* Estilos para las celdas del cuerpo */
+.comparison-table td {
+    font-size: 0.95em;
+}
+
+.mfa-list {
+    list-style: none; /* Elimina los puntos de lista por defecto */
+    padding-left: 0; /* Elimina el padding izquierdo por defecto */
+    margin-left: 0; /* Elimina cualquier margen izquierdo adicional */
+}
+
+.mfa-list > li { /* Solo aplica a los LI de primer nivel de mfa-list */
+    font-size: 1em; /* Tamaño de fuente para los ítems principales */
+    line-height: 1.6;
+    margin-bottom: 10px; /* Espacio entre los ítems principales */
+    position: relative; /* Para el pseudo-elemento si lo usas */
+    padding-left: 25px; /* Espacio para la viñeta (si usas pseudo-elemento) */
+    text-align: justify; /* Justifica el texto principal de los ítems */
+}
+
+/* Estilos para la lista anidada (las de "Sabe", "Tiene", "Es") */
+.mfa-sub-list {
+    list-style: none; /* Elimina los puntos de lista por defecto */
+    padding-left: 20px; /* Sangría para la sub-lista */
+    margin-top: 5px; /* Pequeño espacio encima de la sub-lista */
+    margin-bottom: 0; /* Elimina margen inferior extra */
+}
+
+.mfa-sub-list li {
+    font-size: 0.95em; /* Tamaño de fuente ligeramente más pequeño para la sub-lista */
+    line-height: 1.5;
+    margin-bottom: 5px; /* Espacio entre los ítems de la sub-lista */
+    position: relative;
+    padding-left: 20px; /* Espacio para la viñeta de la sub-lista */
+    text-align: justify; /* Justifica el texto de los ítems de la sub-lista */
+}
+
+/* Estilo para el texto en negrita dentro de los LI */
+.mfa-list li b,
+.mfa-list li strong {
+    margin-right: 5px; /* Espacio para separar el texto en negrita del resto */
+    font-weight: bold; /* Asegura que esté en negrita */
+    color: var(--heading-color); /* Opcional: darle un color distinto */
+}
+
+.mfa-list li .fas.fa-caret-right { /* Estilos específicos para el ícono de Font Awesome */
+    margin-right: 8px; /* Espacio entre el icono y el texto */
+    color: #004085; /* El color azul que quieres para el icono */
+    font-size: 1.2em; /* Tamaño del icono */
+    flex-shrink: 0; /* Evita que el icono se encoja si el texto es muy largo */
+    /* Asegura que la altura de línea del icono coincida con la del texto si es necesario */
+    line-height: inherit; 
+}
+
+.mfa-sub-list li .fas.fa-thumbtack { 
+    margin-right: 10px; /* Espacio entre el ícono y el texto */
+    color: #004085; /* Un color anaranjado/marrón como el de tu imagen (puedes ajustar el código hex) */
+    font-size: 1.1em; /* Tamaño del ícono, puedes ajustar */
+    flex-shrink: 0; /* Evita que el ícono se encoja */
+    padding-top: 2px; /* Ajuste fino para alinear verticalmente el ícono con la primera línea de texto */
+}
+
+
 /* Media Queries para Responsividad */
 @media (max-width: 768px) {
     .navbar {
@@ -456,7 +606,37 @@ body {
         width: 100%; /* Ocupa todo el ancho disponible */
         max-width: 400px; /* Limita el ancho máximo para evitar que se vea muy ancho en móviles */
     }
-    
+
+    .comparison-table {
+        /* No necesitamos ajustar el width de la tabla, ya que overflow-x: auto la maneja */
+        font-size: 0.9em; /* Reduce el tamaño de fuente para tablas en móviles */
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+        padding: 10px 12px; /* Reduce el padding en móviles */
+    }
+        .mfa-header {
+        flex-direction: column; /* Apila el icono y el título */
+        text-align: center; /* Centra el texto */
+        gap: 10px;
+    }
+    .mfa-header .fas {
+        font-size: 1.5em;
+    }
+    .mfa-header h2 {
+        font-size: 1.3em;
+    }
+    .mfa-list > li,
+    .mfa-sub-list li {
+        padding-left: 15px; /* Reduce el padding en móviles */
+        font-size: 0.9em;
+    }
+    .mfa-list > li::before,
+    .mfa-sub-list li::before {
+        left: 0; /* Mantiene la viñeta al inicio */
+        font-size: 1em;
+    }
 }
 
 @media (max-width: 480px) {
@@ -467,4 +647,9 @@ body {
     .lesson-section h2 {
         font-size: 1.2em;
     }
+    
+    .comparison-table {
+        font-size: 0.85em; /* Reduce aún más en móviles muy pequeños */
+        min-width: 500px; /* Asegura que la tabla siga siendo "scrollable" */
+    }    
 }
