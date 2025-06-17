@@ -490,6 +490,7 @@ button {
      margin-top: 90px;
 }
 
+
 .glasses .titlepage {
      text-align: center;
      padding-bottom: 60px;
@@ -514,6 +515,7 @@ button {
      padding: 120px 0px 30px 0px;
      margin-bottom: 30px;
 }
+
 
 .glasses .glasses_box figure {
      margin: 0;
@@ -837,3 +839,13 @@ ul.location_icon li a {
 .shop {
      margin-bottom: 90px;
 }
+
+.sidebar-image{
+     width: 40%;
+     background-size: cover;
+}
+.titlepage2{
+     margin-top: 3vh;
+     display: flex;
+     justify-content: center;
+}    
