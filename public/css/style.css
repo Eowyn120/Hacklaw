@@ -708,7 +708,6 @@ button {
 }
 
 .main_form {
-     position: absolute;
      z-index: 999;
      background: #fff;
      padding: 40px 50px;
@@ -776,6 +775,7 @@ button {
 
 .footer {
      background: #252525;
+     margin-top: 50px;
      padding-top: 90px;
      text-align: center;
      font-family: 'Roboto', sans-serif;

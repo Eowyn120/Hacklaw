@@ -101,7 +101,7 @@
                            </ul>
                         </nav>
                      </aside>
-                     <img src="https://leppardlaw.com/wp-content/uploads/LL-Image-State-vs.-Federal-Computer-Crime-Laws-FE.webp" alt="delitos informáticos" class="sidebar-image">
+                     <img src="/images/modulo1.png" alt="delitos informáticos" class="sidebar-image">
                      </div>
                   </div>
 
@@ -165,6 +165,36 @@
                         </div>
                     </section>                    
                 </div>
+
+<div id="actividad1" class="lesson-content hidden activity-section">
+    <h1>Actividad 1: Clasificación de Delitos</h1>
+    <p>Arrastra cada característica o ejemplo a la categoría correcta (Delito Informático o Delito Tradicional).</p>
+
+    <div class="drag-drop-container">
+        <div class="drag-items-pool">
+            <div class="drag-item" draggable="true" data-category="digital">Uso de redes globales</div>
+            <div class="drag-item" draggable="true" data-category="physical">Uso de fuerza física</div>
+            <div class="drag-item" draggable="true" data-category="digital">Difícil trazabilidad</div>
+            <div class="drag-item" draggable="true" data-category="physical">Escenario físico limitado</div>
+            <div class="drag-item" draggable="true" data-category="digital">Ataques a infraestructuras críticas (software)</div>
+            <div class="drag-item" draggable="true" data-category="physical">Robo en tienda</div>
+            <div class="drag-item" draggable="true" data-category="digital">Phishing</div>
+            <div class="drag-item" draggable="true" data-category="physical">Fraude con cheques físicos</div>
+        </div>
+
+        <div class="drop-zones-container">
+            <div class="drop-zone" id="digital-drop-zone" data-target-category="digital">
+                <h2>Delito Informático</h2>
+            </div>
+            <div class="drop-zone" id="physical-drop-zone" data-target-category="physical">
+                <h2>Delito Tradicional</h2>
+            </div>
+        </div>
+    </div>
+
+    <button class="btn btn-primary mt-4" id="submit-act1">Enviar Respuesta</button>
+    <div id="feedback-act1" class="mt-3"></div>
+</div>                
 
                 <div id="leccion2" class="lesson-content hidden">
                     <h1>Lección 2: Tipos de Delitos Informáticos y su Impacto</h1>
@@ -298,6 +328,49 @@
                     </section>
                 </div>
 
+<div id="actividad2" class="lesson-content hidden activity-section">
+    <h1>Actividad 2: Identificación de Ciberdelitos y Casos</h1>
+    <p>Lee cada escenario y selecciona la opción correcta.</p>
+
+    <div class="question-container">
+        <div class="question-item">
+            <p><strong>Pregunta 1:</strong> Un usuario recibe un correo electrónico que parece ser de su banco, solicitándole actualizar sus credenciales a través de un enlace. Al hacer clic, es dirigido a una página falsa que imita la del banco. ¿Qué tipo de delito informático es este?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="a"> Acceso ilícito</label><br>
+                <label><input type="radio" name="q1" value="b"> Robo de identidad (Phishing)</label><br>
+                <label><input type="radio" name="q1" value="c"> Distribución de malware</label><br>
+                <label><input type="radio" name="q1" value="d"> Ciberacoso</label>
+            </div>
+            <div class="answer-feedback" id="feedback-q1"></div>
+        </div>
+
+        <div class="question-item">
+            <p><strong>Pregunta 2:</strong> Durante el ataque de WannaCry, ¿cuál fue la principal vulnerabilidad que explotó el ransomware para propagarse?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="a"> Contraseñas débiles de los usuarios</label><br>
+                <label><input type="radio" name="q2" value="b"> Ingeniería social a través de correos falsos</label><br>
+                <label><input type="radio" name="q2" value="c"> Una vulnerabilidad en Windows conocida como EternalBlue</label><br>
+                <label><input type="radio" name="q2" value="d"> Ataques de denegación de servicio (DDoS)</label>
+            </div>
+            <div class="answer-feedback" id="feedback-q2"></div>
+        </div>
+
+        <div class="question-item">
+            <p><strong>Pregunta 3:</strong> El caso Cambridge Analytica es un ejemplo de la explotación de datos personales, ¿para qué fin principal?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="a"> Robo de información bancaria</label><br>
+                <label><input type="radio" name="q3" value="b"> Sabotaje de infraestructuras críticas</label><br>
+                <label><input type="radio" name="q3" value="c"> Manipulación política mediante campañas personalizadas</label><br>
+                <label><input type="radio" name="q3" value="d"> Extorsión a usuarios individuales</label>
+            </div>
+            <div class="answer-feedback" id="feedback-q3"></div>
+        </div>
+    </div>
+
+    <button class="btn btn-primary mt-4" id="submit-act2">Enviar Respuestas</button>
+    <div id="overall-feedback-act2" class="mt-3"></div>
+</div>                
+
                 <div id="leccion3" class="lesson-content hidden">
                     <h1>Lección 3: Impacto Socioeconómico de la Ciberdelincuencia</h1>
                     <section class="lesson-section">
@@ -339,7 +412,110 @@
                         </div>
                      </section>                                           
                 </div>
+
+<div id="actividad3" class="lesson-content hidden activity-section">
+    <h1>Actividad 3: Impacto de la Ciberdelincuencia</h1>
+    <p>Arrastra cada tipo de impacto al escenario que mejor lo describe.</p>
+
+    <div class="drag-drop-container-impact">
+        <div class="drag-items-pool-impact">
+            <div class="drag-item-impact" draggable="true" data-impact="individuo">Individuo</div>
+            <div class="drag-item-impact" draggable="true" data-impact="individuo">Individuo</div>
+            <div class="drag-item-impact" draggable="true" data-impact="empresa">Empresa</div>
+            <div class="drag-item-impact" draggable="true" data-impact="gobierno">Gobierno</div>
+        </div>
+
+        <div class="drop-zones-container-impact">
+            <div class="drop-zone-impact" data-target-impact="empresa">
+                <p><strong>Escenario 1:</strong> Una cadena de supermercados sufre una interrupción total de sus sistemas de pago y logística, resultando en pérdidas millonarias y la incapacidad de operar por varios días.</p>
+                <div class="dropped-item"></div>
             </div>
+            <div class="drop-zone-impact" data-target-impact="individuo">
+                <p><strong>Escenario 2:</strong> Un ciudadano descubre que sus datos personales han sido publicados en foros oscuros y que se han realizado compras fraudulentas con su tarjeta de crédito.</p>
+                <div class="dropped-item"></div>
+            </div>
+            <div class="drop-zone-impact" data-target-impact="gobierno">
+                <p><strong>Escenario 3:</strong> Un ataque cibernético compromete la red eléctrica nacional, provocando apagones generalizados y afectando servicios esenciales a gran escala.</p>
+                <div class="dropped-item"></div>
+            </div>
+             <div class="drop-zone-impact" data-target-impact="individuo">
+                <p><strong>Escenario 4:</strong> Una persona es víctima de acoso constante y amenazas en redes sociales, lo que le causa estrés y temor.</p>
+                <div class="dropped-item"></div>
+            </div>
+        </div>
+    </div>
+
+    <button class="btn btn-primary mt-4" id="submit-act3">Enviar Respuesta</button>
+    <div id="feedback-act3" class="mt-3"></div>
+</div>
+
+<div id="quiz-final" class="lesson-content hidden quiz-section">
+    <h1>Quiz Final del Módulo 1</h1>
+    <p>Responde las siguientes preguntas para evaluar tu conocimiento del módulo. Debes obtener al menos un 60% para aprobar.</p>
+
+    <div class="question-container">
+        <div class="question-item">
+            <p><strong>Pregunta 1:</strong> ¿Cuál de las siguientes es una característica principal de los delitos informáticos que los diferencia de los tradicionales?</p>
+            <div class="options">
+                <label><input type="radio" name="quiz_q1" value="a"> Su medio de comisión es siempre físico</label><br>
+                <label><input type="radio" name="quiz_q1" value="b"> Tienen un alcance geográfico estrictamente local</label><br>
+                <label><input type="radio" name="quiz_q1" value="c"> Requieren un uso intensivo de tecnología y redes</label><br>
+                <label><input type="radio" name="quiz_q1" value="d"> Son fáciles de rastrear debido a la evidencia directa</label>
+            </div>
+            <div class="answer-feedback" id="quiz-feedback-q1"></div>
+        </div>
+
+        <div class="question-item">
+            <p><strong>Pregunta 2:</strong> ¿Qué tipo de delito informático implica el bloqueo de archivos de un sistema y la exigencia de un pago para su liberación?</p>
+            <div class="options">
+                <label><input type="radio" name="quiz_q2" value="a"> Robo de identidad</label><br>
+                <label><input type="radio" name="quiz_q2" value="b"> Ciberacoso</label><br>
+                <label><input type="radio" name="quiz_q2" value="c"> Phishing</label><br>
+                <label><input type="radio" name="quiz_q2" value="d"> Ransomware</label>
+            </div>
+            <div class="answer-feedback" id="quiz-feedback-q2"></div>
+        </div>
+
+        <div class="question-item">
+            <p><strong>Pregunta 3:</strong> ¿Qué organización o entidad fue el objetivo principal del ataque de WannaCry en el Reino Unido?</p>
+            <div class="options">
+                <label><input type="radio" name="quiz_q3" value="a"> El Banco de Inglaterra</label><br>
+                <label><input type="radio" name="quiz_q3" value="b"> El Servicio Nacional de Salud (NHS)</label><br>
+                <label><input type="radio" name="quiz_q3" value="c"> La Bolsa de Valores de Londres</label><br>
+                <label><input type="radio" name="quiz_q3" value="d"> El Ministerio de Defensa</label>
+            </div>
+            <div class="answer-feedback" id="quiz-feedback-q3"></div>
+        </div>
+
+        <div class="question-item">
+            <p><strong>Pregunta 4:</strong> ¿Cuál fue la principal repercusión del caso Cambridge Analytica a nivel político y social?</p>
+            <div class="options">
+                <label><input type="radio" name="quiz_q4" value="a"> La prohibición de todas las redes sociales a nivel mundial</label><br>
+                <label><input type="radio" name="quiz_q4" value="b"> El endurecimiento de las regulaciones sobre la privacidad de datos y el debate sobre la manipulación en línea</label><br>
+                <label><input type="radio" name="quiz_q4" value="c"> La implementación de sistemas de seguridad biométricos obligatorios para todos los usuarios de internet</label><br>
+                <label><input type="radio" name="quiz_q4" value="d"> Un aumento significativo en la inversión en criptomonedas por parte de gobiernos</label>
+            </div>
+            <div class="answer-feedback" id="quiz-feedback-q4"></div>
+        </div>
+        
+        <div class="question-item">
+            <p><strong>Pregunta 5:</strong> La interrupción de servicios de agua o energía debido a un ciberataque es un ejemplo de impacto en:</p>
+            <div class="options">
+                <label><input type="radio" name="quiz_q5" value="a"> Individuos</label><br>
+                <label><input type="radio" name="quiz_q5" value="b"> Empresas</label><br>
+                <label><input type="radio" name="quiz_q5" value="c"> Infraestructuras críticas del gobierno</label><br>
+                <label><input type="radio" name="quiz_q5" value="d"> Todas las anteriores</label>
+            </div>
+            <div class="answer-feedback" id="quiz-feedback-q5"></div>
+        </div>
+
+    </div>
+
+    <button class="btn btn-primary mt-4" id="submit-quiz-final">Finalizar Quiz</button>
+    <div id="quiz-overall-feedback" class="mt-3"></div>
+</div>   
+
+</div>
 
             <div class="navigation-buttons">
                 <button class="btn btn-prev" id="btn-prev" disabled>Anterior</button>
@@ -382,6 +558,7 @@
       <script src="/js/bootstrap.bundle.min.js"></script>
       <script src="/js/jquery-3.0.0.min.js"></script>
       <script src="/js/leccion.js"></script>
+      <script src="/js/actividades1.js" defer></script>
       <!-- sidebar -->
       <script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
       <script src="/js/custom.js"></script>

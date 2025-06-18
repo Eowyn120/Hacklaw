@@ -94,20 +94,26 @@
                            <h3>Registrate</h3>
                         </div>
                         <div class="col-md-12 ">
-                           <input class="contactus" placeholder="Nombre" type="text" name="nombre" required> 
+                           <input class="contactus" placeholder="Nombre" type="text" name="nombre" required maxlength="25"> 
                         </div>
                         <div class="col-md-12">
-                           <input class="contactus" placeholder="Apellido" type="text" name="apellido" required> 
+                           <input class="contactus" placeholder="Apellido" type="text" name="apellido" required maxlength="25"> 
                         </div>
                         <div class="col-md-12">
-                           <input class="contactus" placeholder="Correo Electrónico" type="email" name="email">                          
+                           <input class="contactus" placeholder="Cedula" type="number" name="cedula" required maxlength="8"> 
+                        </div>                        
+                        <div class="col-md-12">
+                           <input class="contactus" placeholder="Correo Electrónico" type="email" name="email" maxlength="30">                          
                         </div>
                         <div class="col-md-12">
-                           <input class="contactus" placeholder="Contraseña" type="password" name="password">                          
+                           <input class="contactus" placeholder="Contraseña" type="password" name="password" maxlength="8">                          
                         </div>
                         <div class="col-md-12">
-                           <input class="contactus" placeholder="Confirme Contraseña" type="password" name="password2">                          
+                           <input class="contactus" placeholder="Pregunta de Seguridad" type="text" name="preg_seg" maxlength="16">                          
                         </div>
+                        <div class="col-md-12">
+                           <input class="contactus" placeholder="Respuesta de Seguridad" type="text" name="resp_seg" maxlength="8">                          
+                        </div>                                                
                         <div class="col-md-12">
                            <button class="send_btn">Registrase</button>
                         </div>

@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
+const estudiantesModel = require ('../models/estudiantes');
+
 // Visualizacion Pagina de Inicio
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Hacklaw' });
@@ -37,20 +39,37 @@ router.get('/login', function(req, res, next){
 });
 
 router.post('/register', function(req, res, next){
-  const {nombre, apellido, email, password, password2} = req.body;
-  console.log(req.body);
-  res.send('Registro')
+  const {nombre, apellido, cedula, email, password, preg_seg, resp_seg} = req.body;
+    estudiantesModel
+    .registrarEstudiante(nombre, apellido, cedula, email, password, preg_seg, resp_seg)
+    .then(()=>{
+      res.redirect('/login');
+    })
+    .catch((err)=>{
+      return res.status(500).send('Error en el registro del estudiante')
+    })
 });
 
 router.post('/login', function(req, res, next){
   const {email, password} = req.body;
-  console.log(req.body);
-  if (email == 'admin' && password == 'admin') {
-    req.session.auth = true;
-    res.redirect('/users');
-  } else {
-    res.send('Credenciales incorrectas');
-  }
+  estudiantesModel
+  .inicioSesion(email)
+  .then((datos)=>{
+    concat = datos[0].password;
+    concat2 = datos[0].id
+    console.log(concat2);
+    if (password == concat){
+      req.session.auth = true;
+      req.session.userid = concat2;
+      res.redirect('/users');
+    }else{
+      res.send('Credenciales invalidas')
+    }
+  })
+  .catch((err)=>{
+    console.error(err.message);
+    return res.status(500).send('Error en el inicio de sesion')
+  })
 });
 
 

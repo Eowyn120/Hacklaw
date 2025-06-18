@@ -530,6 +530,181 @@ body {
     padding-top: 2px; /* Ajuste fino para alinear verticalmente el ícono con la primera línea de texto */
 }
 
+    /* Estilos para la actividad 1 */
+    .drag-drop-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 20px;
+    }
+    .drag-items-pool {
+        flex: 1;
+        min-width: 250px;
+        border: 2px dashed var(--border-color);
+        padding: 15px;
+        min-height: 150px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-content: flex-start;
+        background-color: var(--secondary-color);
+        border-radius: 8px;
+    }
+    #actividad1 .drag-item {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: grab;
+        font-size: 0.9em;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .drop-zones-container {
+        flex: 2;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        min-height: 200px;
+    }
+    #actividad1 .drop-zone {
+        flex: 1;
+        min-width: 280px;
+        border: 2px solid var(--primary-color);
+        padding: 20px;
+        min-height: 150px;
+        background-color: #f0f8ff; /* Un azul muy claro */
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .drop-zone h2 {
+        color: var(--heading-color);
+        margin-top: 0;
+        margin-bottom: 15px;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 10px;
+        width: 100%;
+        text-align: center;
+    }
+
+ /* Estilos para la actividad 2 */
+    .question-container {
+        margin-top: 20px;
+        background-color: var(--secondary-color);
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .question-item {
+        margin-bottom: 25px;
+        padding-bottom: 15px;
+        border-bottom: 1px dashed var(--border-color);
+    }
+    .question-item:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    .question-item p {
+        font-size: 1.1em;
+        margin-bottom: 15px;
+    }
+    .options label {
+        display: block;
+        margin-bottom: 8px;
+        cursor: pointer;
+        font-size: 1em;
+    }
+    .options input[type="radio"] {
+        margin-right: 10px;
+    }
+    .answer-feedback {
+        margin-top: 10px;
+        font-weight: bold;
+    }
+/* Estilos para la actividad 3 */
+    .drag-drop-container-impact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 20px;
+    }
+    .drag-items-pool-impact {
+        flex: 1;
+        min-width: 150px;
+        border: 2px dashed var(--border-color);
+        padding: 15px;
+        min-height: 100px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-content: flex-start;
+        background-color: var(--secondary-color);
+        border-radius: 8px;
+    }
+    #actividad3 .drag-item-impact {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: grab;
+        font-size: 0.9em;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .drop-zones-container-impact {
+        flex: 2;
+        display: flex;
+        flex-direction: column; /* Apilar las zonas de destino */
+        gap: 15px;
+        min-height: 250px;
+    }
+    #actividad3 .drop-zone-impact {
+        border: 1px solid #e0e0e0;
+        padding: 15px;
+        min-height: 80px;
+        background-color: #fcfcfc;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .drop-zone-impact p {
+        margin-bottom: 10px;
+    }
+   #actividad3 .dropped-item {
+        min-height: 40px; /* Espacio para el ítem arrastrado */
+        border: 1px dashed #ccc;
+        border-radius: 4px;
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Estilos para el quiz final (reutiliza los de actividad 2 si es posible o añade específicos) */
+    .quiz-section .question-container {
+        margin-top: 20px;
+        background-color: #f0f0f0; /* Color de fondo ligeramente diferente para el quiz */
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .quiz-section .question-item {
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #ccc;
+    }
+    .quiz-section .question-item:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    .quiz-section .options label {
+        font-size: 1.05em;
+    }    
+
 
 /* Media Queries para Responsividad */
 @media (max-width: 768px) {
