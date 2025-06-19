@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => { // ¡Este es el ÚNICO DOM
     if (submitAct2Btn) { // Comprobación defensiva
         submitAct2Btn.addEventListener('click', () => {
             const answers = {
-                q1: 'b',
+                q1: 'c',
                 q2: 'c',
                 q3: 'c'
             };
@@ -167,11 +167,11 @@ document.addEventListener('DOMContentLoaded', () => { // ¡Este es el ÚNICO DOM
     if (submitQuizFinalBtn) { // Comprobación defensiva
         submitQuizFinalBtn.addEventListener('click', async () => {
             const answers = {
-                quiz_q1: 'c',
-                quiz_q2: 'd',
-                quiz_q3: 'b',
-                quiz_q4: 'b',
-                quiz_q5: 'c'
+                quiz_q1: 'b',
+                quiz_q2: 'b',
+                quiz_q3: 'c',
+                quiz_q4: 'c',
+                quiz_q5: 'a'
             };
             let correctCount = 0;
             const totalQuestions = Object.keys(answers).length;
