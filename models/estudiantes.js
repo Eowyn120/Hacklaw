@@ -60,4 +60,24 @@ module.exports = {
             }))
         })
     },
+    consultarModulos(estudiante_id){
+        return new Promise ((resolve, reject)=>{
+            const sql= 'SELECT 1 AS module_num, modo FROM modulo_1 WHERE estudiante_id = ? UNION ALL SELECT 2 AS module_num, modo FROM modulo_2 WHERE estudiante_id = ? UNION ALL SELECT 3 AS module_num, modo FROM modulo_3 WHERE estudiante_id = ? UNION ALL SELECT 4 AS module_num, modo FROM modulo_4 WHERE estudiante_id = ?';
+            db.all(sql, [estudiante_id, estudiante_id, estudiante_id, estudiante_id], ((err, resultados)=>{
+                if(err) reject(err);
+                else{
+                    console.log(JSON.stringify(resultados, null, 4));
+                    // Procesar los resultados para construir el array de módulos desbloqueados
+                    const modulosdesbloqueados = [];
+                    resultados.forEach(row => {
+                        if (row.modo === 1) {
+                            modulosdesbloqueados.push(row.module_num);
+                        }
+                    });
+                    resolve (modulosdesbloqueados);
+                }
+            }))
+        })
+    },
+    
 };

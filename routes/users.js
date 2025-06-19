@@ -17,10 +17,18 @@ function getDb() {
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  const usuarioId = req.session.userid;
-
   if (req.session.auth){
-    res.render('modulos', {title: 'Inicio'});
+    const estudiante_id = req.session.userid;
+    estudiantesModel
+    .consultarModulos(estudiante_id)
+    .then((datos)=>{
+      res.render('modulos', {unlockedModules: datos});
+      console.log('llega aqui');
+      console.log('Módulos desbloqueados:', datos);
+    })
+    .catch((err)=>{
+      res.status(500).json({ message: 'Error interno del servidor al cargar módulos.' });
+    })
   }else{
     res.redirect('/login');
   }

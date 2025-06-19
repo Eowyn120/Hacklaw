@@ -91,46 +91,45 @@
                </div>
             </div>
          </div>
-         <div class="container-fluid">
-            <div class="row">
-               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                  <a href="/users/modulo1">
-                     <div class="glasses_box">
-                        <figure><img src="/images/modulo1.png" width="172" height="150" alt="#"/></figure>
-                        <h3><span class="blu">1.</span> Modulo</h3>
-                        <p>Introducción a los Delitos Informáticos</p>
-                     </div>
-                  </a>
-                  </div>
-                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                  <a href="/users/modulo2">
-                     <div class="glasses_box">
-                        <figure><img src="/images/modulo2.png" width="162" height="120" alt="#"/></a></figure>
-                        <h3><span class="blu">2.</span> Modulo</h3>
-                        <p>Marco Legal Internacional sobre Delitos Informáticos</p>
-                     </div>
-                  </a>
-                  </div>
-                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                  <a href="/users/modulo3">
-                     <div class="glasses_box">
-                        <figure><img src="/images/constitucion.png" width="107" height="110" alt="#"/></figure>
-                        <h3><span class="blu">3.</span> Modulo</h3>
-                        <p>Legislación Venezolana sobre Delitos Informáticos</p>
-                     </div>
-                  </a>
-                  </div>
-                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                  <a href="/users/modulo4">
-                     <div class="glasses_box">
-                        <figure><img src="/images/modulo4.png" width="150" height="120" alt="#"/></figure>
-                        <h3><span class="blu">4.</span> Modulo</h3>
-                        <p>Prevención y Prácticas en Seguridad Digital</p>
-                     </div>
-                  </a>
-                  </div>
+<div class="container-fluid">
+    <div class="row">
+        <% 
+            // Define los módulos con su información y el número de módulo
+            const modules = [
+                { num: 1, title: 'Introducción a los Delitos Informáticos', width: '172', height: '150', image: '/images/modulo1.png', link: '/users/modulo1' },
+                { num: 2, title: 'Marco Legal Internacional sobre Delitos Informáticos', width: '162', height: '120', image: '/images/modulo2.png', link: '/users/modulo2' },
+                { num: 3, title: 'Legislación Venezolana sobre Delitos Informáticos', width: '107', height: '110', image: '/images/constitucion.png', link: '/users/modulo3' },
+                { num: 4, title: 'Prevención y Prácticas en Seguridad Digital', width: '150', height: '120', image: '/images/modulo4.png', link: '/users/modulo4' }
+            ];
+
+            // Itera sobre la lista de módulos
+            modules.forEach(module => {
+                // Aquí es donde se usa el array 'unlockedModules' recibido del backend
+                const isUnlocked = unlockedModules.includes(module.num); 
+        %>
+        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+            <div class="glasses_box">
+                <% if (!isUnlocked) { %>
+                    <div class="locked-overlay">
+                        <div>
+                            <i class="fa fa-lock lock-icon"></i>
+                            <p>Bloqueado</p>
+                        </div>
+                    </div>
+                <% } %>
+                <a href="<%= isUnlocked ? module.link : '#' %>" class="<%= isUnlocked ? '' : 'locked-module' %>">
+                    <figure><img src="<%= module.image %>" width="<%= module.width %>" height="<%= module.height %>" alt="<%= module.title %>"/></figure>
+                    <h3><span class="blu"><%= module.num %>.</span> Módulo</h3>
+                    <p><%= module.title %></p>
+                </a>
+                <div class="module-status <%= isUnlocked ? 'status-unlocked' : 'status-locked' %>">
+                    <%= isUnlocked ? 'Desbloqueado' : 'Bloqueado' %>
+                </div>
             </div>
-         </div>
+        </div>
+        <% }); %>
+    </div>
+</div>
       </div>
       <!-- end Our  Glasses section -->
       <!--  footer -->
