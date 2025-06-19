@@ -79,5 +79,16 @@ module.exports = {
             }))
         })
     },
-    
+    obtenerEstudiante(id){
+        return new Promise ((resolve, reject)=>{
+           const sql= 'SELECT * FROM estudiantes WHERE id = ?';
+            db.all(sql, [id], ((err, resultados)=>{
+                if (err) reject (err);
+                else{ 
+                    console.log(JSON.stringify(resultados, null, 4));
+                    resolve (resultados);
+                }
+            }))
+        })
+    },
 };

@@ -5,7 +5,7 @@
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <!-- mobile metas -->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="width=dnotas[0]ice-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
       <title>HackLaw</title>
@@ -13,27 +13,48 @@
       <meta name="description" content="">
       <meta name="author" content="">
       <!-- bootstrap css -->
-      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="/css/bootstrap.min.css">
       <!-- style css -->
-      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="/css/style.css">
       <!-- Responsive-->
-      <link rel="stylesheet" href="css/responsive.css">
+      <link rel="stylesheet" href="/css/responsive.css">
       <!-- fevicon -->
-      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <link rel="icon" href="/images/fevicon.png" type="image/gif" />
       <!-- Scrollbar Custom CSS -->
-      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <link rel="stylesheet" href="/css/jquery.mCustomScrollbar.min.css">
       <!-- Tweaks for older IEs-->
       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+        <style>
+    .aprobado { color: green; font-weight: bold; }
+    .reprobado { color: red; font-weight: bold; }
+    .perfil-container { max-width: 600px; margin: auto; padding: 2em; background: #fff; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+    table { width: 100%; border-collapse: collapse; margin-top: 1em;  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);}
+    th, td { border: 1px solid #ccc; padding: 0.6em; text-align: center; }
+    h2 { margin-top: 0; }
+    button {
+      margin-top: 1em;
+      padding: 0.6em 1.2em;
+      background-color: #0d6efd;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:disabled {
+      background-color: #888;
+      cursor: not-allowed;
+    }
+  </style>
    </head>
    <!-- body -->
    <body class="main-layout position_head">
       <!-- loader  -->
       <div class="loader_bg">
-         <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+         <div class="loader"><img src="/images/loading.gif" alt="#" /></div>
       </div>
       <!-- end loader -->
       <!-- header -->
@@ -58,11 +79,11 @@
                         </button>
                         <div class="collapse navbar-collapse" id="navbarsExample04">
                            <ul class="navbar-nav mr-auto">
-                              <li class="nav-item active">
+                              <li class="nav-item">
                                  <a class="nav-link" href="/users">Inicio</a>
                               </li>
-                              <li class="nav-item">
-                                 <a class="nav-link" href="/users/perfil">Perfil</a>
+                              <li class="nav-item active">
+                                 <a class="nav-link" href="#">Perfil</a>
                               </li>
                               <li class="nav-item login_btn">
                                  <a class="nav-link" href="/users/logout">Salir</a>
@@ -83,48 +104,65 @@
             <div class="row">
                <div class="col-md-10 offset-md-1">
                   <div class="titlepage">
-                     <h2>Comience su Aprendizaje</h2>
+                    <h2>Perfil del Usuario</h2>
                   </div>
                </div>
             </div>
          </div>
 <div class="container-fluid">
     <div class="row">
-        <% 
-            // Define los módulos con su información y el número de módulo
-            const modules = [
-                { num: 1, title: 'Introducción a los Delitos Informáticos', width: '172', height: '150', image: '/images/modulo1.png', link: '/users/modulo1' },
-                { num: 2, title: 'Marco Legal Internacional sobre Delitos Informáticos', width: '162', height: '120', image: '/images/modulo2.png', link: '/users/modulo2' },
-                { num: 3, title: 'Legislación Venezolana sobre Delitos Informáticos', width: '107', height: '110', image: '/images/constitucion.png', link: '/users/modulo3' },
-                { num: 4, title: 'Prevención y Prácticas en Seguridad Digital', width: '150', height: '120', image: '/images/modulo4.png', link: '/users/modulo4' }
-            ];
+       <div class="perfil-container">
+    <p><strong>Nombre:</strong> <%= datos[0].nombre %> <%= datos[0].apellido %></p>
+    <p><strong>Correo:</strong> <%= datos[0].correo %></p>
+    <p><strong>Cedula:</strong> <%= datos[0].cedula %></p>
 
-            // Itera sobre la lista de módulos
-            modules.forEach(module => {
-                // Aquí es donde se usa el array 'unlockedModules' recibido del backend
-                const isUnlocked = unlockedModules.includes(module.num); 
-        %>
-        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-            <div class="glasses_box">
-                <% if (!isUnlocked) { %>
-                    <div class="locked-overlay">
-                        <div>
-                            <i class="fa fa-lock lock-icon"></i>
-                            <p>Bloqueado</p>
-                        </div>
-                    </div>
-                <% } %>
-                <a href="<%= isUnlocked ? module.link : '#' %>" class="<%= isUnlocked ? '' : 'locked-module' %>">
-                    <figure><img src="<%= module.image %>" width="<%= module.width %>" height="<%= module.height %>" alt="<%= module.title %>"/></figure>
-                    <h3><span class="blu"><%= module.num %>.</span> Módulo</h3>
-                    <p><%= module.title %></p>
-                </a>
-                <div class="module-status <%= isUnlocked ? 'status-unlocked' : 'status-locked' %>">
-                    <%= isUnlocked ? 'Desbloqueado' : 'Bloqueado' %>
-                </div>
-            </div>
-        </div>
-        <% }); %>
+    <h3>Rendimiento por Módulo</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Módulo 1</th>
+          <th>Modulo 2</th>
+          <th>Modulo 3</th>
+          <th>Modulo 4</th>
+          <th>Prueba Final</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <% if (notas[0].quiz_1 != null){ %> 
+                <td><%= notas[0].quiz_1 %></td>
+                <% } else {%>
+                <td>No cursado</td>%>
+                <% }%>
+            <% if (notas[0].quiz_2 != null){ %> 
+                <td><%= notas[0].quiz_2 %></td>
+                <% } else {%>
+                <td>No cursado</td>%>
+                <% }%>
+            <% if (notas[0].quiz_3 != null){ %> 
+                <td><%= notas[0].quiz_3 %></td>
+                <% } else {%>
+                <td>No cursado</td>%>
+                <% }%>
+            <% if (notas[0].quiz_4 != null){ %> 
+                <td><%= notas[0].quiz_4 %></td>
+                <% } else {%>
+                <td>No cursado</td>%>
+                <% }%>
+            <% if (notas[0].quiz_final != null){ %> 
+                <td><%= notas[0].quiz_final %></td>
+                <% } else {%>
+                <td>No cursado</td>%>
+                <% }%>
+            <% const aprobado = notas[0].quiz_final >= 7; %>
+            <td class="<%= aprobado ? 'aprobado' : 'reprobado' %>">
+              <%= aprobado ? 'Aprobado' : 'Reprobado' %>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
     </div>
 </div>
       </div>
@@ -156,13 +194,13 @@
       </footer>
       <!-- end footer -->
       <!-- Javascript files-->
-      <script src="js/jquery.min.js"></script>
-      <script src="js/popper.min.js"></script>
-      <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="/js/jquery.min.js"></script>
+      <script src="/js/popper.min.js"></script>
+      <script src="/js/bootstrap.bundle.min.js"></script>
+      <script src="/js/jquery-3.0.0.min.js"></script>
       <!-- sidebar -->
-      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-      <script src="js/custom.js"></script>
+      <script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="/js/custom.js"></script>
    </body>
 </html>
 
